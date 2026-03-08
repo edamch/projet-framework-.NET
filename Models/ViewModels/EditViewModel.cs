@@ -2,7 +2,7 @@
 {
     public class EditViewModel: CreateViewModels
     {
-        public int Id { get; set; }
+        public int ProductId { get; set; }
         public string ExistingImagePath { get; set; }
     }
 }

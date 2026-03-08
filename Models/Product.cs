@@ -4,22 +4,24 @@ namespace tp2.Models
 {
     public class Product
     {
-        public int Id { get; set; }
 
+        public int ProductId { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 5)]
-        public string Désignation { get; set; }
-
+        public string Name { get; set; }
         [Required]
         [Display(Name = "Prix en dinar :")]
-        public float Prix { get; set; }
-
+        public float Price { get; set; }
         [Required]
         [Display(Name = "Quantité en unité :")]
-        public int Quantite { get; set; }
+        public int QteStock { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
         [Required]
         [Display(Name = "Image :")]
-
         public string Image { get; set; }
+
+
     }
+   
 }

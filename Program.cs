@@ -1,16 +1,23 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using tp2.Models;
 using tp2.Models.Repositories;
-
+using static tp2.Models.Repositories.CategorieRepository;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContextPool<AppDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("ProductDBConnection"
-)));
-builder.Services.AddScoped<IRepository<Product>, SqlProductRepository>();
+options.UseSqlServer(builder.Configuration.GetConnectionString("ProductDBConnection")));
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<ICategorieRepository, CategoryRepository>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    // Default Password settings.
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,6 +32,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();
 
 app.UseAuthorization();
 

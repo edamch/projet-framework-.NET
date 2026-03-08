@@ -20,3 +20,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Vous pouvez ajuster la hauteur selon votre préférence */
+    object-fit: contain; /* Coupe et ajuste l'image pour éviter la distorsion */
+    border-radius: 5px; /* Coins arrondis pour un meilleur rendu */
+}
