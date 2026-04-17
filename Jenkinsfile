@@ -24,7 +24,7 @@ checkout([
 $class: 'GitSCM',
 branches: [[name: "*/${branchName}"]],
 userRemoteConfigs: [[
-url: 'https://github.com/espace2021/projcicd'
+url: 'https://github.com/edamch/projet-framework-.NET'
 ]]
 ])
 }
@@ -36,7 +36,7 @@ steps {
 script {
 def scannerHome = tool 'MySonarScanner'
 withSonarQubeEnv('projet') {
-withCredentials([string(credentialsId: 'sonarqube', variable: 'TOKEN')]) {
+withCredentials([string(credentialsId: 'sonarqube05', variable: 'TOKEN')]) {
 bat "\"${scannerHome}\\bin\\sonar-scanner.bat\" " +
 "-Dsonar.projectKey=node-projetcid " +
 "-Dsonar.sources=. " +
