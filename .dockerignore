@@ -1,0 +1,14 @@
+# Dossiers de build générés par .NET
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+
+# GitHub Actions (inutile dans l'image)
+.github/
+
+# Docker lui-même
+Dockerfile
+.dockerignore

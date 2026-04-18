@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Models",
+    "\\Models\\ViewModels",
+    "\\Views",
+    "\\Views\\Admin",
+    "\\wwwroot",
+    "\\wwwroot\\css",
+    "\\wwwroot\\images",
+    "\\wwwroot\\js",
+    "\\wwwroot\\lib"
+  ],
+  "SelectedNode": "\\tp2.csproj",
+  "PreviewInSolutionExplorer": false
+}
